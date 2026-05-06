@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Gestão | Glow by Almeida</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="utlis/admin.css">
+</head>
+
+<body>
+
+    <div id="login-section" class="login-container">
+        <div class="login-box">
+            <h2>Acesso Restrito</h2>
+            <p>Faça login para gerenciar a agenda</p>
+            <form id="formLogin">
+                <input type="email" id="emailLogin" placeholder="E-mail" required>
+
+                <div class="senha-container">
+                    <input type="password" id="senhaLogin" placeholder="Senha" required>
+                    <span id="toggleSenha" class="olho-senha" title="Mostrar senha">👁️</span>
+                </div>
+
+                <button type="submit"
+                    style="background-color: #FF85A1; color: white; border: none; padding: 12px; border-radius: 5px; font-weight: bold; cursor: pointer;">Entrar</button>
+                <p id="msgErro" style="color: red; display: none; margin-top: 10px; font-size: 0.9rem;">E-mail ou senha
+                    incorretos!</p>
+            </form>
+            <a href="index.html"
+                style="display: block; margin-top: 15px; color: #FF85A1; text-decoration: none; font-size: 0.9rem;">←
+                Voltar para o site</a>
+        </div>
+    </div>
+
+    <div id="dashboard-section" style="display: none;">
+        <header class="admin-header">
+            <div class="container-header">
+                <h1>Gestão de Agendamentos</h1>
+                <div>
+                    <a href="index.html" class="btn-voltar">Site</a>
+                    <button id="btnSair" class="btn-voltar"
+                        style="background: red; border-color: red; margin-left: 10px; cursor: pointer;">Sair</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="admin-container">
+            <div class="card-tabela">
+                <h2>Próximos Horários</h2>
+                <div class="table-responsive">
+                    <table class="tabela-agendamentos">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Hora</th>
+                                <th>Cliente</th>
+                                <th>Serviço</th>
+                                <th>Observação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaAgendamentos">
+                            <tr>
+                                <td colspan="7" style="text-align: center;">Carregando agenda...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="utlis/admin.js"></script>
+</body>
+
+</html>

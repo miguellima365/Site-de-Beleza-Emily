@@ -1,0 +1,384 @@
+:root {
+    --rosa: #FF85A1;
+    --preto: #000000;
+    --branco: #FFFFFF;
+    --cinza-fundo: #FDFDFD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--branco);
+    color: var(--preto);
+    line-height: 1.6;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('../img/Unha1.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.frase-efeito {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--rosa);
+}
+
+.btn-primario {
+    background-color: var(--rosa);
+    color: var(--branco);
+    border: none;
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primario:hover {
+    background-color: var(--branco);
+    color: var(--rosa);
+}
+
+/* Modais */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: var(--branco);
+    margin: 5% auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 10px;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--rosa);
+}
+
+/* Organização dos botões no Hero */
+.hero-btns {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os botões caiam para a linha de baixo no celular */
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: var(--branco);
+    border: 2px solid var(--rosa);
+    padding: 15px 35px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-secundario:hover {
+    background-color: var(--rosa);
+}
+
+/* Lista de Serviços (Estilo Antigo) */
+.servico-item {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--rosa);
+    border-radius: 4px;
+}
+
+.servico-item h3 {
+    margin-bottom: 5px;
+    color: var(--preto);
+}
+
+.preco {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--rosa);
+}
+
+/* Formulário */
+#formAgendamento {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#formAgendamento input,
+#formAgendamento select,
+#formAgendamento textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Quem Sou Eu (Centralizado e Organizado) */
+.quem-sou {
+    padding: 80px 20px;
+    background-color: var(--cinza-fundo);
+    text-align: center;
+}
+
+.perfil-centralizado {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.foto-perfil {
+    width: 180px;
+    height: 180px;
+    background: var(--rosa);
+    background-image: url('../img/Eu.jpeg');
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
+    margin: 0 auto 30px;
+    border: 4px solid var(--preto);
+}
+
+.quem-sou h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--rosa);
+}
+
+.quem-sou p {
+    font-size: 1.1rem;
+    color: #444;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Galeria (Lado a Lado) */
+.galeria {
+    padding: 80px 20px;
+}
+
+.galeria h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Playfair Display';
+    font-size: 2.5rem;
+}
+
+/* Container das fotos */
+.grid-fotos { 
+    display: grid; 
+    /* O minmax(200px, 1fr) garante que elas fiquem lado a lado e não ocupem a tela toda */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 20px; 
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+/* Formato das fotos de unhas */
+.foto-producao {
+    width: 100%;
+    height: auto; /* A altura se ajusta automaticamente com base na proporção abaixo */
+    aspect-ratio: 3 / 4; /* Força um formato retangular (ideal para unhas/Instagram) */
+    object-fit: cover; /* Preenche o espaço sem amassar a imagem */
+    object-position: center; /* Mantém o foco no centro da unha */
+    border-radius: 10px; 
+    border: 2px solid var(--rosa); 
+    transition: transform 0.3s; 
+}
+
+.foto-producao:hover {
+    transform: scale(1.05);
+}
+
+.foto-placeholder {
+    height: 300px;
+    background: #eee;
+    border: 1px solid var(--rosa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rosa);
+    font-weight: 600;
+}
+
+/* Agenda / Contatos */
+.contato {
+    padding: 80px 20px;
+    background: var(--preto);
+    color: var(--branco);
+    text-align: center;
+}
+
+.contato h2 {
+    color: var(--rosa);
+    margin-bottom: 10px;
+}
+
+.contato-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-contato {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--branco);
+    cursor: pointer;
+    border: none;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+/* Botão charmoso de horários dentro do formulário */
+.btn-aviso-horarios {
+    width: 100%;
+    background-color: var(--cinza-fundo);
+    border: 2px dashed var(--rosa);
+    color: var(--rosa);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.btn-aviso-horarios:hover {
+    background-color: var(--rosa);
+    color: var(--branco);
+}
+
+/* Garante que o pop-up de horários fique por cima do pop-up de formulário */
+#modalHorarios {
+    z-index: 1001; 
+}
+
+.form-btn {
+    background: var(--rosa);
+}
+
+/* Cor com o degradê oficial do Instagram */
+.btn-contato.insta {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #ffffff; /* Letra branca para dar contraste */
+    border: none; /* Remove qualquer borda padrão */
+    transition: all 0.3s ease; /* Deixa a animação suave */
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.btn-contato.insta:hover {
+    opacity: 0.9; /* Deixa levemente transparente */
+    transform: scale(1.05); /* Faz o botão dar uma leve "crescida" */
+    color: #ffffff;
+}
+
+/* Cor oficial do WhatsApp */
+.btn-contato.whats {
+    background-color: #25D366;
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-contato.whats:hover {
+    background-color: #128c3b; /* Um verde um pouco mais escuro ao passar o mouse */
+    transform: scale(1.05);
+    color: #ffffff;
+}
+
+.btn-contato:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+footer {
+    padding: 40px;
+    background: #111;
+    color: #666;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+footer strong {
+    color: var(--rosa);
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .contato-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-contato {
+        width: 100%;
+    }
+}
