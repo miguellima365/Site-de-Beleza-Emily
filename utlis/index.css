@@ -23,6 +23,10 @@ body {
     position: relative;
     height: 100vh;
     background-image: url('../img/Unha1.jpeg');
+<<<<<<< HEAD
+=======
+    /* Adicione sua foto aqui */
+>>>>>>> d49e7f49a0ccba4a5968b148b942f470df40ba80
     background-size: cover;
     background-position: center;
     display: flex;
@@ -322,6 +326,7 @@ body {
     background: var(--rosa);
 }
 
+<<<<<<< HEAD
 /* Cor com o degradê oficial do Instagram */
 .btn-contato.insta {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -349,6 +354,14 @@ body {
     background-color: #128c3b; /* Um verde um pouco mais escuro ao passar o mouse */
     transform: scale(1.05);
     color: #ffffff;
+=======
+.insta {
+    background: #333;
+}
+
+.whats {
+    background: #25D366;
+>>>>>>> d49e7f49a0ccba4a5968b148b942f470df40ba80
 }
 
 .btn-contato:hover {

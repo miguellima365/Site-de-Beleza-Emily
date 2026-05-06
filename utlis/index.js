@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // 1. IMPORTAÇÕES DO FIREBASE (Tem que ficar no topo do arquivo)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -24,33 +25,60 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalServicos = document.getElementById("modalServicos");
     const modalForm = document.getElementById("modalFormulario");
     const modalHorarios = document.getElementById("modalHorarios");
+=======
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // Modais
+    const modalServicos = document.getElementById("modalServicos");
+    const modalForm = document.getElementById("modalFormulario");
+    const modalHorarios = document.getElementById("modalHorarios"); // NOVO
+>>>>>>> d49e7f49a0ccba4a5968b148b942f470df40ba80
 
     // Botões de abrir
     const btnServicos = document.getElementById("btnServicos");
     const btnAbrirForm = document.getElementById("btnAbrirForm");
+<<<<<<< HEAD
     const btnHorarios = document.getElementById("btnHorarios"); 
     const btnVerHorariosForm = document.getElementById("btnVerHorariosForm"); 
+=======
+    const btnHorarios = document.getElementById("btnHorarios"); // NOVO
+    const btnVerHorariosForm = document.getElementById("btnVerHorariosForm"); // Botão dentro do formulário
+>>>>>>> d49e7f49a0ccba4a5968b148b942f470df40ba80
 
     // Botões de fechar (Os "X")
     const closeServicos = document.getElementById("closeServicos");
     const closeForm = document.getElementById("closeForm");
+<<<<<<< HEAD
     const closeHorarios = document.getElementById("closeHorarios"); 
+=======
+    const closeHorarios = document.getElementById("closeHorarios"); // NOVO
+>>>>>>> d49e7f49a0ccba4a5968b148b942f470df40ba80
 
     // Funções para Abrir
     btnServicos.onclick = () => { modalServicos.style.display = "block"; document.body.style.overflow = "hidden"; }
     btnAbrirForm.onclick = () => { modalForm.style.display = "block"; document.body.style.overflow = "hidden"; }
+<<<<<<< HEAD
     btnHorarios.onclick = () => { modalHorarios.style.display = "block"; document.body.style.overflow = "hidden"; } 
+=======
+    btnHorarios.onclick = () => { modalHorarios.style.display = "block"; document.body.style.overflow = "hidden"; } // NOVO
+    // Abre os horários a partir do botão dentro do formulário
+>>>>>>> d49e7f49a0ccba4a5968b148b942f470df40ba80
     btnVerHorariosForm.onclick = () => { modalHorarios.style.display = "block"; }
 
     // Funções para Fechar
     closeServicos.onclick = () => { modalServicos.style.display = "none"; document.body.style.overflow = "auto"; }
     closeForm.onclick = () => { modalForm.style.display = "none"; document.body.style.overflow = "auto"; }
+<<<<<<< HEAD
     closeHorarios.onclick = () => { modalHorarios.style.display = "none"; document.body.style.overflow = "auto"; } 
+=======
+    closeHorarios.onclick = () => { modalHorarios.style.display = "none"; document.body.style.overflow = "auto"; } // NOVO
+>>>>>>> d49e7f49a0ccba4a5968b148b942f470df40ba80
 
     // Fechar ao clicar na tela escura fora do pop-up
     window.onclick = (event) => {
         if (event.target == modalServicos) { modalServicos.style.display = "none"; document.body.style.overflow = "auto"; }
         if (event.target == modalForm) { modalForm.style.display = "none"; document.body.style.overflow = "auto"; }
+<<<<<<< HEAD
         if (event.target == modalHorarios) { modalHorarios.style.display = "none"; document.body.style.overflow = "auto"; } 
     }
 
@@ -119,12 +147,23 @@ document.addEventListener("DOMContentLoaded", function () {
     form.onsubmit = async function (e) {
         e.preventDefault(); 
 
+=======
+        if (event.target == modalHorarios) { modalHorarios.style.display = "none"; document.body.style.overflow = "auto"; } // NOVO
+    }
+
+    // Enviar WhatsApp e Resetar Formulário
+    const form = document.getElementById("formAgendamento");
+    form.onsubmit = function(e) {
+        e.preventDefault(); // Impede o site de recarregar
+        
+>>>>>>> d49e7f49a0ccba4a5968b148b942f470df40ba80
         // Pega os valores digitados
         const nome = document.getElementById("nome").value;
         const servico = document.getElementById("servicoInteresse").value;
         const data = document.getElementById("dataAgendamento").value;
         const hora = document.getElementById("horaAgendamento").value;
         const msg = document.getElementById("mensagem").value;
+<<<<<<< HEAD
 
         // Muda o texto do botão para mostrar que está carregando (Boa prática)
         const btnSubmit = form.querySelector('button[type="submit"]');
@@ -164,5 +203,26 @@ document.addEventListener("DOMContentLoaded", function () {
             // Restaura o texto do botão
             btnSubmit.innerText = textoOriginal;
         }
+=======
+        
+        // Formata a data de AAAA-MM-DD (padrão do sistema) para DD/MM/AAAA (padrão Brasil)
+        const dataFormatada = data.split('-').reverse().join('/');
+
+        // Número de telefone do salão
+        const fone = "5511944682978"; // COLOQUE O SEU NÚMERO AQUI
+        
+        // Monta o texto incluindo data e hora
+        const texto = `Olá! Meu nome é ${nome}. Tenho interesse no serviço: ${servico}. %0AGostaria de agendar para o dia ${dataFormatada} às ${hora}. %0AObs: ${msg}`;
+        
+        // Abre o WhatsApp
+        window.open(`https://wa.me/${fone}?text=${texto}`, '_blank');
+
+        // RESETA O FORMULÁRIO (Limpa os campos)
+        form.reset();
+
+        // OPCIONAL: Se quiser que o pop-up feche sozinho depois de enviar, descomente as duas linhas abaixo:
+        modalForm.style.display = "none";
+        document.body.style.overflow = "auto";
+>>>>>>> d49e7f49a0ccba4a5968b148b942f470df40ba80
     }
 });
