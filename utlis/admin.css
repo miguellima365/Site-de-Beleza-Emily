@@ -1,0 +1,273 @@
+:root {
+    --rosa: #FF85A1;
+    --preto: #000000;
+    --preto-suave: #1A1A1A;
+    --branco: #FFFFFF;
+    --cinza-fundo: #F4F6F8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cinza-fundo);
+    color: var(--preto-suave);
+}
+
+/* Header Admin */
+.admin-header {
+    background-color: var(--preto);
+    padding: 20px 0;
+    color: var(--branco);
+}
+
+.container-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.container-header div {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
+
+.admin-header h1 {
+    color: var(--rosa);
+    font-size: 1.5rem;
+}
+
+.btn-voltar {
+    color: var(--branco);
+    text-decoration: none;
+    border: 1px solid var(--rosa);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: var(--rosa);
+    color: var(--branco);
+}
+
+/* Container Principal */
+.admin-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card-tabela {
+    background: var(--branco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 5px solid var(--rosa);
+}
+
+.card-tabela h2 {
+    margin-bottom: 20px;
+    color: var(--preto);
+}
+
+/* Tabela */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.tabela-agendamentos {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.tabela-agendamentos th,
+.tabela-agendamentos td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabela-agendamentos th {
+    background-color: #fcfcfc;
+    color: var(--preto);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.tabela-agendamentos tbody tr:hover {
+    background-color: #fafafa;
+}
+
+/* Selo de Novo Agendamento */
+.badge-novo {
+    background-color: #ff4757;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Estilos da Tela de Login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--cinza-fundo);
+}
+
+.login-box {
+    background: var(--branco);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--rosa);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.login-box h2 {
+    color: var(--rosa);
+    margin-bottom: 5px;
+}
+
+.login-box p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.login-box button {
+    width: 100%;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    opacity: 0.8;
+}
+
+/* Estilos para o campo de senha com olhinho */
+.senha-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.senha-container input {
+    margin-bottom: 0;
+    padding-right: 40px;
+}
+
+.olho-senha {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.5;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.olho-senha:hover {
+    opacity: 1;
+}
+
+/* =========================================
+   RESPONSIVIDADE MODO MOBILE (CELULAR)
+   ========================================= */
+@media (max-width: 768px) {
+    .container-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .admin-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .table-responsive {
+        overflow-x: hidden;
+    }
+    
+    .tabela-agendamentos {
+        min-width: 100%;
+    }
+
+    .tabela-agendamentos thead {
+        display: none; 
+    }
+
+    .tabela-agendamentos, 
+    .tabela-agendamentos tbody, 
+    .tabela-agendamentos tr, 
+    .tabela-agendamentos td {
+        display: block;
+        width: 100%;
+    }
+
+    .tabela-agendamentos tr {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        padding: 10px;
+    }
+
+    .tabela-agendamentos td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 0.95rem;
+    }
+
+    .tabela-agendamentos td:last-child {
+        border-bottom: none;
+    }
+
+    .tabela-agendamentos td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        text-align: left;
+        font-weight: 600;
+        color: var(--rosa);
+        white-space: nowrap;
+    }
+}
